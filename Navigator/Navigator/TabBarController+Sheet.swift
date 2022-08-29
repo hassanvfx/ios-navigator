@@ -17,6 +17,8 @@ extension TabBarController {
     }
 }
 
+
+
 extension TabBarController {
     func present(controller: UIViewController?) {
         dismissSheet { [weak self] in
@@ -30,6 +32,7 @@ extension TabBarController {
             navController.modalPresentationStyle = self.nav.modalStyle
 
             self.present(navController, animated: true)
+            navController.transitioningDelegate = self
             self.sheetNavigator = navController
             self.nav.syncOnNavigationChange()
         }
