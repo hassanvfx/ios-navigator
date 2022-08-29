@@ -4,32 +4,33 @@
 //
 //  Created by hassan uriostegui on 8/28/22.
 //
-import Resolver
-import SwiftUI
 import UIKit
+import SwiftUI
+import Resolver
 
-enum DemoTabs: Int, NavigatorTabItem {
+enum DemoTabs: Int,NavigatorTabItem {
+    
     case home,
          store,
          dubble
-
-    var image: UIImage {
-        UIImage(named: "circle")!
+    
+    var image: UIImage{
+        UIImage(named:"circle")!
+    }
+    
+    var imageActive: UIImage{
+        UIImage(named:"circle.fill")!
     }
 
-    var imageActive: UIImage {
-        UIImage(named: "circle.fill")!
+    var intValue: Int{
+        self.rawValue
     }
-
-    var intValue: Int {
-        rawValue
-    }
-
-    var tapOverride: (() -> Void)? {
+    
+    var tapOverride: (() -> Void)?{
         nil
     }
-
-    var displayName: String {
+    
+    var displayName:String{
         switch self {
         case .home:
             return "Home"
@@ -39,8 +40,10 @@ enum DemoTabs: Int, NavigatorTabItem {
             return "Me"
         }
     }
-
-    func navFactory(tabController: TabBarController<DemoTabs>) -> () -> UINavigationController {
+    
+    
+    func navFactory(tabController:TabBarController<DemoTabs>)->()->UINavigationController{
+        
         switch self {
         case .home:
             return { tabController.linkAsNavigationController(root: AnyView(Rectangle().fill(Color.red))) }
@@ -49,9 +52,11 @@ enum DemoTabs: Int, NavigatorTabItem {
         case .dubble:
             return { tabController.linkAsNavigationController(root: AnyView(Rectangle().fill(Color.blue))) }
         }
-    }
 
-    static func item(idx: Int) -> DemoTabs {
+       
+    }
+    
+    static func item(idx:Int)->DemoTabs {
         switch idx {
         case 0:
             return .home
@@ -63,14 +68,16 @@ enum DemoTabs: Int, NavigatorTabItem {
             fatalError()
         }
     }
-
-    static var allItems: [DemoTabs] {
-        [.home, .store, .dubble]
+    
+    static var allItems: [DemoTabs]{
+        [.home,.store,.dubble ]
     }
-
-    static var defaultItem: DemoTabs {
+    
+   
+    static var defaultItem: DemoTabs{
         .home
     }
+    
 }
 
 public enum Sheet: String {
