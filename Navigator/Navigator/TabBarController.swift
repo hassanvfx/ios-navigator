@@ -34,7 +34,7 @@ public class TabBarController<TABS: NavigatorTabItem>: UITabBarController, UINav
 }
 
 public extension TabBarController {
-    func linkAsNavigationController(root view: AnyView) -> UINavigationController {
+    func linkAsNavigationController<SomeView:View>(root view: SomeView) -> UINavigationController {
         func prepare<E: View>(view: E) -> AnyView {
             view
                 .padding(.bottom, NavigatorUI.TabBarHeight)
