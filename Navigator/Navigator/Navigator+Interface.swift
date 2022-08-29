@@ -104,24 +104,13 @@ public extension Navigator {
         }
     }
 
-    func present(sheet: Sheet) {
-        let content = make(sheet: sheet)
-        let view = NavigationView<AnyView, TABS>(title: titled(sheet: sheet)) { content.lux.view }
-        let host = UIHostingController<AnyView>(rootView: AnyView(view))
+    func present(sheet content: UIViewController) {
+//        let view = NavigationView<AnyView, TABS> { content.view.lux.view }
+//        let host = UIHostingController<AnyView>(rootView: AnyView(view))
 
         DispatchQueue.main.async {
-            self.sheetController = host
+            self.sheetController = content
         }
     }
 }
 
-// MARK: SAMPLE
-
-extension Navigator {
-    func pushTestController() {
-        let view = NavigationView<AnyView, TABS> { Spacer().lux.view }.lux.view
-        let host = UIHostingController<AnyView>(rootView: view)
-        host.view.layoutMargins = .zero
-        push(controller: host)
-    }
-}
