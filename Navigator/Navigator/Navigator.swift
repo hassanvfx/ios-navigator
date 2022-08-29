@@ -20,7 +20,7 @@ public class Navigator<TABS: NavigatorTabItem>: ObservableObject {
     @Published public var sheetController: UIViewController?
     @Published public var modalStyle: UIModalPresentationStyle = .pageSheet
     @Published public var stack = [UIViewController]()
-    @Published public var animateTabBar = false
+    @Published public var animateTabBar = true
 
     public weak var tabController: TabBarController<TABS>?
     var navController: UINavigationController? {
