@@ -20,4 +20,3 @@ public protocol NavigatorTabItem: CaseIterable {
     var tapOverride: (() -> Void)? { get }
     func navFactory(tabController: TabBarController<InnerItem>) -> () -> UINavigationController
 }
-

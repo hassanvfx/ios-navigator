@@ -9,7 +9,6 @@ import Combine
 import Resolver
 import SwiftUI
 
-
 public class TabBarController<TABS: NavigatorTabItem>: UITabBarController, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
     @Injected var nav: Navigator<TABS>
     weak var sheetNavigator: UINavigationController?
@@ -32,10 +31,10 @@ public class TabBarController<TABS: NavigatorTabItem>: UITabBarController, UINav
         navController.navigationBar.isHidden = true
         nav.syncOnNavigationChange()
     }
-    
+
     // MARK: PRESENTATION
-    
-    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+    public func animationController(forDismissed _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         nav.dismissSheet()
         nav.syncOnNavigationChange()
         return nil
@@ -43,7 +42,7 @@ public class TabBarController<TABS: NavigatorTabItem>: UITabBarController, UINav
 }
 
 public extension TabBarController {
-    func linkAsNavigationController<SomeView:View>(root view: SomeView) -> UINavigationController {
+    func linkAsNavigationController<SomeView: View>(root view: SomeView) -> UINavigationController {
         func prepare<E: View>(view: E) -> AnyView {
             view
                 .padding(.bottom, NavigatorUI.TabBarHeight)

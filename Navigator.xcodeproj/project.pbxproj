@@ -34,6 +34,7 @@
 		5C75C85A28BC7AB90019AA83 /* circle.fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C75C85828BC7AB90019AA83 /* circle.fill.png */; };
 		5C75C86628BC7BEB0019AA83 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C75C86528BC7BEA0019AA83 /* circle.png */; };
 		5C75C86C28BC8FEE0019AA83 /* HelperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75C86B28BC8FEE0019AA83 /* HelperViews.swift */; };
+		5C75C87128BC968D0019AA83 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75C87028BC968D0019AA83 /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		5C75C85828BC7AB90019AA83 /* circle.fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.fill.png; sourceTree = "<group>"; };
 		5C75C86528BC7BEA0019AA83 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		5C75C86B28BC8FEE0019AA83 /* HelperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperViews.swift; sourceTree = "<group>"; };
+		5C75C87028BC968D0019AA83 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				5C75C7FD28BC57850019AA83 /* TabBarController+Navigator.swift */,
 				5C75C80228BC57910019AA83 /* TabBarController+Sheet.swift */,
 				5C75C83728BC5A710019AA83 /* NavigationView.swift */,
+				5C75C87028BC968D0019AA83 /* TabBarView.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				5C75C81228BC57DA0019AA83 /* Navigator+Nav.swift in Sources */,
 				5C75C84328BC5C290019AA83 /* Navigator+Interface.swift in Sources */,
 				5C75C7E728BC57040019AA83 /* TabBarController.swift in Sources */,
+				5C75C87128BC968D0019AA83 /* TabBarView.swift in Sources */,
 				5C75C7AD28BC56B00019AA83 /* SceneDelegate.swift in Sources */,
 				5C75C82828BC59890019AA83 /* Constants.swift in Sources */,
 				5C75C7F428BC576A0019AA83 /* TabBarController+Representable.swift in Sources */,
