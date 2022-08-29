@@ -14,10 +14,10 @@ struct RootView: View {
 
     var body: some View {
         ZStack {
-            TabBarController<DemoTabs>.RepresentableView()
+            TabNavViewController<DemoTabs>.RepresentableView()
                 .edgesIgnoringSafeArea(.all)
 
-            TabBarView()
+            NavigatorTabBarView()
         }
         .lux
         .tweak(.canvasSurface)

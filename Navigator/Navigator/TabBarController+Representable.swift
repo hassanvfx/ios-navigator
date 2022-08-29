@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-extension TabBarController {
+extension TabNavViewController {
     struct RepresentableView: UIViewControllerRepresentable {
-        func makeUIViewController(context _: UIViewControllerRepresentableContext<RepresentableView>) -> TabBarController {
-            TabBarController()
+        func makeUIViewController(context _: UIViewControllerRepresentableContext<RepresentableView>) -> TabNavViewController {
+            TabNavViewController()
         }
 
-        static func dismantleUIViewController(controller: TabBarController, coordinator _: ()) {
+        static func dismantleUIViewController(controller: TabNavViewController, coordinator _: ()) {
             controller.cancelObservers()
         }
 
-        func updateUIViewController(_: TabBarController,
+        func updateUIViewController(_: TabNavViewController,
                                     context _: UIViewControllerRepresentableContext<RepresentableView>)
         {}
     }

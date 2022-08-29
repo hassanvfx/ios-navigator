@@ -22,14 +22,13 @@ public class Navigator<TABS: NavigatorTabItem>: ObservableObject {
     @Published public var stack = [UIViewController]()
     @Published public var animateTabBar = true
 
-    public weak var tabController: TabBarController<TABS>?
+    public weak var tabController: TabNavViewController<TABS>?
     var navController: UINavigationController? {
         tabController?.currentNavigator
     }
 }
 
 extension Navigator {
-    
     /// The following dynamically reflects the currently acitve stack from the active UINavigationController
     func syncOnNavigationChange() {
         DispatchQueue.main.async {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension TabBarController {
+extension TabNavViewController {
     var currentNavigator: UINavigationController {
         if let sheetNavigator = self.sheetNavigator {
             return sheetNavigator

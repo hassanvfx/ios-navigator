@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension TabBarController {
+extension TabNavViewController {
     func linkObservers() {
         cancellables.append(
             nav.$tab.sink {

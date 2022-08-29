@@ -18,5 +18,5 @@ public protocol NavigatorTabItem: CaseIterable {
     var image: UIImage { get }
     var imageActive: UIImage { get }
     var tapOverride: (() -> Void)? { get }
-    func navFactory(tabController: TabBarController<InnerItem>) -> () -> UINavigationController
+    func navFactory(tabController: TabNavViewController<InnerItem>) -> () -> UINavigationController
 }

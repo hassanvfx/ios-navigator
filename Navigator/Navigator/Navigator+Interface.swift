@@ -16,7 +16,7 @@ public extension Navigator {
         displayBackButton == false &&
             sheetController != nil
     }
-    
+
     var displayTabbar: Bool {
         (animateTabBar == false) ||
             stack.count <= 1
@@ -71,7 +71,7 @@ public extension Navigator {
 // MARK: TABBAR
 
 public extension Navigator {
-    func link(tabBar controller: TabBarController<TABS>) {
+    func link(tabBar controller: TabNavViewController<TABS>) {
         tabController = controller
     }
 }

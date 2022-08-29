@@ -9,7 +9,7 @@ import Combine
 import Resolver
 import SwiftUI
 
-public class TabBarController<TABS: NavigatorTabItem>: UITabBarController, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
+public class TabNavViewController<TABS: NavigatorTabItem>: UITabBarController, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
     @Injected var nav: Navigator<TABS>
     weak var sheetNavigator: UINavigationController?
 
@@ -41,7 +41,7 @@ public class TabBarController<TABS: NavigatorTabItem>: UITabBarController, UINav
     }
 }
 
-public extension TabBarController {
+public extension TabNavViewController {
     func linkAsNavigationController<SomeView: View>(root view: SomeView) -> UINavigationController {
         func prepare<E: View>(view: E) -> AnyView {
             view

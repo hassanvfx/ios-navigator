@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension TabBarController {
+extension TabNavViewController {
     func setActiveTabBar() {
         nav.link(tabBar: self)
     }
@@ -22,9 +22,9 @@ extension TabBarController {
     }
 }
 
-extension TabBarController {
+extension TabNavViewController {
     func setupTabs() {
-        let factories = TABS.allItems.map { $0.navFactory(tabController: self as! TabBarController<TABS.InnerItem.InnerItem>) }
+        let factories = TABS.allItems.map { $0.navFactory(tabController: self as! TabNavViewController<TABS.InnerItem.InnerItem>) }
         viewControllers = factories.map { $0() }
         tabBar.isHidden = true
     }

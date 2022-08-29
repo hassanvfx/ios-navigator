@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension TabBarController {
+extension TabNavViewController {
     func linkSheet() {
         cancellables.append(
             nav.$sheetController.sink(receiveValue: { [weak self] controller in
@@ -17,7 +17,7 @@ extension TabBarController {
     }
 }
 
-extension TabBarController {
+extension TabNavViewController {
     func present(controller: UIViewController?) {
         dismissSheet { [weak self] in
             guard let self = self else { return }

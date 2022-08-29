@@ -9,7 +9,7 @@ import Lux
 import Resolver
 import SwiftUI
 
-struct TabBarView: View {
+struct NavigatorTabBarView: View {
     @InjectedObject var nav: Navigator<DemoTabs>
     var body: some View {
         Column {
@@ -26,7 +26,7 @@ struct TabBarView: View {
     }
 }
 
-extension TabBarView {
+extension NavigatorTabBarView {
     func show(tab: DemoTabs) {
         nav.set(tab: tab.rawValue)
     }
@@ -36,7 +36,7 @@ extension TabBarView {
     }
 }
 
-extension TabBarView {
+extension NavigatorTabBarView {
     func tabsView() -> AnyView {
         Row {
             ForEach(DemoTabs.allItems, id: \.self) { item in

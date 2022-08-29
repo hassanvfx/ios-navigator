@@ -9,16 +9,16 @@ import Lux
 import Resolver
 import SwiftUI
 
-struct NavigationViewActionItem {
+struct NavigatorActionItem {
     var icon: String?
     var title: String?
     var action: () -> Void
 }
 
-struct NavigationView<Content: View, TABS: NavigatorTabItem>: View {
+struct NavigatorView<Content: View, TABS: NavigatorTabItem>: View {
     var title: String?
     var titleTweak: Lux.Tweak = .titleLayout
-    var rightActions = [NavigationViewActionItem]()
+    var rightActions = [NavigatorActionItem]()
     let viewBuilder: () -> Content
 
     @InjectedObject var nav: Navigator<TABS>
@@ -37,29 +37,29 @@ struct NavigationView<Content: View, TABS: NavigatorTabItem>: View {
                 .padding(.top, NavigatorUI.NavBarHeight)
 
             Row {
-                Group{
-                nav.displayCloseButton ?
-                    Button(action: dismiss) {
-                        Image(systemName: "xmark")
-                            .imageScale(.large)
-                            .padding(.horizontal)
-                    }
-                    .lux
-                    .tweak(.canvasSurface)
-                    .style(.layoutBlock, .iconLarge)
-                    .view
-                    : nav.displayBackButton ?
-                    Button(action: goBack) {
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .padding(.horizontal)
-                    }
-                    .lux.view
-                    : Image(systemName: "chevron.left")
-                    .imageScale(.large)
-                    .opacity(0.01)
-                    .lux.view
-                }.accessibility(identifier:"Navigation Back")
+                Group {
+                    nav.displayCloseButton ?
+                        Button(action: dismiss) {
+                            Image(systemName: "xmark")
+                                .imageScale(.large)
+                                .padding(.horizontal)
+                        }
+                        .lux
+                        .tweak(.canvasSurface)
+                        .style(.layoutBlock, .iconLarge)
+                        .view
+                        : nav.displayBackButton ?
+                        Button(action: goBack) {
+                            Image(systemName: "chevron.left")
+                                .imageScale(.large)
+                                .padding(.horizontal)
+                        }
+                        .lux.view
+                        : Image(systemName: "chevron.left")
+                        .imageScale(.large)
+                        .opacity(0.01)
+                        .lux.view
+                }.accessibility(identifier: "Navigation Back")
 
                 if let title = title {
                     Text(title)
