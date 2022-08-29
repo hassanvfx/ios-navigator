@@ -37,6 +37,7 @@ struct NavigationView<Content: View, TABS: NavigatorTabItem>: View {
                 .padding(.top, NavigatorUI.NavBarHeight)
 
             Row {
+                Group{
                 nav.displayCloseButton ?
                     Button(action: dismiss) {
                         Image(systemName: "xmark")
@@ -58,6 +59,7 @@ struct NavigationView<Content: View, TABS: NavigatorTabItem>: View {
                     .imageScale(.large)
                     .opacity(0.01)
                     .lux.view
+                }.accessibility(identifier:"Navigation Back")
 
                 if let title = title {
                     Text(title)

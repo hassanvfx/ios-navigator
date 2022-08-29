@@ -16,11 +16,11 @@ public extension Navigator {
         displayBackButton == false &&
             sheetController != nil
     }
-
+    
     var displayTabbar: Bool {
-        stack.count <= 1
+        (animateTabBar == false) ||
+            stack.count <= 1
             && sheetController == nil
-            && !hideTabBar
     }
 }
 
@@ -71,7 +71,7 @@ public extension Navigator {
 // MARK: TABBAR
 
 public extension Navigator {
-    func set(tabBar controller: TabBarController<TABS>) {
+    func link(tabBar controller: TabBarController<TABS>) {
         tabController = controller
     }
 }
@@ -105,9 +105,6 @@ public extension Navigator {
     }
 
     func present(sheet content: UIViewController) {
-//        let view = NavigationView<AnyView, TABS> { content.view.lux.view }
-//        let host = UIHostingController<AnyView>(rootView: AnyView(view))
-
         DispatchQueue.main.async {
             self.sheetController = content
         }

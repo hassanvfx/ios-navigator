@@ -7,6 +7,8 @@
 
 import XCTest
 
+
+
 class NavigatorUITests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,21 +23,55 @@ class NavigatorUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testTabs() throws {
+        
+        
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let tabStoreButton = app/*@START_MENU_TOKEN@*/.buttons["Tab Store"]/*[[".buttons[\"Store\"]",".buttons[\"Tab Store\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        tabStoreButton.tap()
+        
+        let tabMeButton = app/*@START_MENU_TOKEN@*/.buttons["Tab Me"]/*[[".buttons[\"Me\"]",".buttons[\"Tab Me\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        tabMeButton.tap()
+        
+        let element = app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        element.tap()
+        element.tap()
+        tabMeButton.tap()
+        tabStoreButton.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Tab Home"]/*[[".buttons[\"Home\"]",".buttons[\"Tab Home\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
     }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    func testLinearNestedTab(){
+        
+        let app = XCUIApplication()
+        app.launch()
+        let actionButtonButton = app/*@START_MENU_TOKEN@*/.buttons["Action Button"]/*[[".buttons[\"Push Test Controller\"]",".buttons[\"Action Button\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        actionButtonButton.tapSlow()
+        
+        let nestedActionButtonButton = app/*@START_MENU_TOKEN@*/.buttons["Nested Action Button"]/*[[".buttons[\"Push Test Controller Again\"]",".buttons[\"Nested Action Button\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        nestedActionButtonButton.tapSlow()
+        nestedActionButtonButton.tapSlow()
+        nestedActionButtonButton.tapSlow()
+        nestedActionButtonButton.tapSlow()
+        nestedActionButtonButton.tapSlow()
+        
+        let navigationBackButton = app/*@START_MENU_TOKEN@*/.buttons["Navigation Back"]/*[[".buttons[\"chevron.left\"]",".buttons[\"Navigation Back\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        navigationBackButton.tapSlow()
+        navigationBackButton.tapSlow()
+        navigationBackButton.tapSlow()
+        navigationBackButton.tapSlow()
+        navigationBackButton.tapSlow()
+        navigationBackButton.tapSlow()
+        actionButtonButton.tapSlow()
+        navigationBackButton.tapSlow()
+        actionButtonButton.tapSlow()
+        navigationBackButton.tapSlow()
+     
+        
     }
+    
+    
+   
 }

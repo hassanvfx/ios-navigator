@@ -20,7 +20,7 @@ public class Navigator<TABS: NavigatorTabItem>: ObservableObject {
     @Published public var sheetController: UIViewController?
     @Published public var modalStyle: UIModalPresentationStyle = .pageSheet
     @Published public var stack = [UIViewController]()
-    @Published public var hideTabBar = false
+    @Published public var animateTabBar = false
 
     public weak var tabController: TabBarController<TABS>?
     var navController: UINavigationController? {
@@ -29,6 +29,8 @@ public class Navigator<TABS: NavigatorTabItem>: ObservableObject {
 }
 
 extension Navigator {
+    
+    /// The following dynamically reflects the currently acitve stack from the active UINavigationController
     func syncOnNavigationChange() {
         DispatchQueue.main.async {
             self.stack = self.navController?.viewControllers ?? []

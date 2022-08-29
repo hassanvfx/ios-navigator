@@ -23,6 +23,7 @@ struct HomeView: View {
                 Text("Push Test Controller")
             }
             .buttonStyle(PlainButtonStyle())
+            .accessibility(identifier: "Action Button")
         }
     }
 }
@@ -42,6 +43,7 @@ struct ChildView: View {
                 Text("Push Test Controller Again")
             }
             .buttonStyle(PlainButtonStyle())
+            .accessibility(identifier: "Nested Action Button")
         }
     }
 }

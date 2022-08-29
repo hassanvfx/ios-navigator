@@ -9,7 +9,7 @@ import SwiftUI
 
 extension TabBarController {
     func setActiveTabBar() {
-        nav.set(tabBar: self)
+        nav.link(tabBar: self)
     }
 
     func setup() {

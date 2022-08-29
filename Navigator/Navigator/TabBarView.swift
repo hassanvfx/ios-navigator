@@ -57,7 +57,8 @@ extension TabBarView {
         18
     }
 
-    func tabItem(text: String, image: Image, imageActive: Image, active: Bool, _ action: @escaping () -> Void) -> AnyView {
+    @ViewBuilder
+    func tabItem(text: String, image: Image, imageActive: Image, active: Bool, _ action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Column {
                 (active ? imageActive : image)
@@ -71,6 +72,7 @@ extension TabBarView {
                     .opacity(active ? 1 : 0.75)
             }
         }
+        .accessibility(identifier: "Tab \(text)")
         .lux
         .tweak(.captionLayout)
         .style(.text)
