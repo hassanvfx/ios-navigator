@@ -15,13 +15,12 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "Lux", url: "https://github.com/spree3d/lux-1", .exact("1.2.7")),
-        .package(name: "Resolver", url: "https://github.com/hmlongco/Resolver", .exact("1.5.0")),
+        .package(name: "Lux", url: "https://github.com/spree3d/lux-1", .exact("1.2.7"))
     ],
     targets: [
         .target(
             name: "NavigatorLib",
-            dependencies: ["Lux", "Resolver"]
+            dependencies: ["Lux"]
         ),
         .testTarget(
             name: "NavigatorLibTests",
