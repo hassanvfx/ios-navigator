@@ -97,7 +97,9 @@ public extension Navigator {
 
         let tabItem = TABS.item(idx: index)
         if let tabAction = tabItem.tapOverride {
-            tabAction()
+            DispatchQueue.main.async {
+                tabAction()
+            }
             return
         }
 
