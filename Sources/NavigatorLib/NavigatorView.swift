@@ -22,18 +22,21 @@ public struct NavigatorActionItem {
     }
 }
 
-public struct NavigatorView<TABS: NavigatorTabItem, CONTENT: View>: View {
+
+public struct NavigatorView<CONTENT: View>: View {
+    var nav:NavigatorProtocol
     var title: String?
     var titleTweak: Lux.Tweak = .titleLayout
     var rightActions = [NavigatorActionItem]()
     let content: (() -> CONTENT)
 
-    @InjectedObject var nav: Navigator<TABS>
-    public init(title:String? = nil,
+    public init(nav:NavigatorProtocol,
+                title:String? = nil,
                 titleTweak: Lux.Tweak = .titleLayout,
                 rightActions: [NavigatorActionItem] = [],
                 content: @escaping () -> CONTENT){
     
+        self.nav = nav
         self.title = title
         self.titleTweak = titleTweak
         self.rightActions = rightActions
@@ -44,7 +47,7 @@ public struct NavigatorView<TABS: NavigatorTabItem, CONTENT: View>: View {
     }
 
     func goBack() {
-        nav.popController()
+        nav.popController(animated: true)
     }
 
     public var body: some View {

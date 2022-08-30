@@ -15,7 +15,10 @@ enum NavigatorUI {
     static let NavBarLargeHeight: CGFloat = 122
 }
 
-public class Navigator<TABS: NavigatorTabItem>: ObservableObject {
+public class Navigator<TABS: NavigatorTabItem>: ObservableObject, NavigatorProtocol {
+    
+    
+    
     @Published public var tab: TABS?
     @Published public var sheetController: UIViewController?
     @Published public var modalStyle: UIModalPresentationStyle = .pageSheet
