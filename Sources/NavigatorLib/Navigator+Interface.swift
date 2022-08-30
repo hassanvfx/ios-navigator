@@ -88,21 +88,15 @@ public extension Navigator {
 
 public extension Navigator {
     func set(tab: Int) {
-        guard
-            tabController?.selectedIndex != tab,
-            let index = tabController?.selectedIndex
-        else {
-            return
-        }
-
-        let tabItem = TABS.item(idx: index)
+        let tabItem = TABS.item(idx: tab)
         if let tabAction = tabItem.tapOverride {
             DispatchQueue.main.async {
                 tabAction()
             }
             return
         }
-
+        
+        guard tabController?.selectedIndex != tabItem.intValue else {  return }
         tabController?.selectedIndex = tab
     }
 }
