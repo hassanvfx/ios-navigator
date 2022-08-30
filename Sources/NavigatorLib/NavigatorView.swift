@@ -22,22 +22,22 @@ public struct NavigatorActionItem {
     }
 }
 
-public struct NavigatorView<CONTENT: View, TABS: NavigatorTabItem>: View {
+public struct NavigatorView<TABS: NavigatorTabItem, CONTENT: View>: View {
     var title: String?
     var titleTweak: Lux.Tweak = .titleLayout
     var rightActions = [NavigatorActionItem]()
-    var viewBuilder: (() -> CONTENT)?
+    let content: (() -> CONTENT)
 
     @InjectedObject var nav: Navigator<TABS>
     public init(title:String? = nil,
                 titleTweak: Lux.Tweak = .titleLayout,
                 rightActions: [NavigatorActionItem] = [],
-                viewBuilder: (() -> CONTENT)? = nil){
+                content: @escaping () -> CONTENT){
     
         self.title = title
         self.titleTweak = titleTweak
         self.rightActions = rightActions
-        self.viewBuilder = viewBuilder
+        self.content = content
     }
     func dismiss() {
         nav.dismissSheet()
@@ -49,7 +49,7 @@ public struct NavigatorView<CONTENT: View, TABS: NavigatorTabItem>: View {
 
     public var body: some View {
         ZStack {
-            viewBuilder?()
+            content()
                 .padding(.top, NavigatorUI.NavBarHeight)
 
             Row {
