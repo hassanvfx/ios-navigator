@@ -95,8 +95,8 @@ public extension Navigator {
             }
             return
         }
-        
-        guard tabController?.selectedIndex != tabItem.intValue else {  return }
+
+        guard tabController?.selectedIndex != tabItem.intValue else { return }
         tabController?.selectedIndex = tab
     }
 }

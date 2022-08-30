@@ -23,12 +23,12 @@ public struct NavigatorActionItem {
 }
 
 public struct NavigatorView<TABS: NavigatorTabItem, CONTENT: View>: View {
+    @ObservedObject var nav: Navigator<TABS>
     var title: String?
     var titleTweak: Lux.Tweak = .titleLayout
     var rightActions = [NavigatorActionItem]()
     let content: () -> CONTENT
 
-    @ObservedObject var nav: Navigator<TABS>
     public init(nav: Navigator<TABS>,
                 title: String? = nil,
                 titleTweak: Lux.Tweak = .titleLayout,
@@ -55,69 +55,11 @@ public struct NavigatorView<TABS: NavigatorTabItem, CONTENT: View>: View {
             content()
                 .padding(.top, NavigatorUI.NavBarHeight)
 
-            Row {
-                Group {
-                    nav.displayCloseButton ?
-                        Button(action: dismiss) {
-                            Image(systemName: "xmark")
-                                .imageScale(.large)
-                                .padding(.horizontal)
-                        }
-                        .lux
-                        .tweak(.canvasSurface)
-                        .style(.layoutBlock, .iconLarge)
-                        .view
-                        : nav.displayBackButton ?
-                        Button(action: goBack) {
-                            Image(systemName: "chevron.left")
-                                .imageScale(.large)
-                                .padding(.horizontal)
-                        }
-                        .lux.view
-                        : Image(systemName: "chevron.left")
-                        .imageScale(.large)
-                        .opacity(0.01)
-                        .lux.view
-                }.accessibility(identifier: "Navigation Back")
-
-                if let title = title {
-                    Text(title)
-                        .lux
-                        .tweak(titleTweak)
-                        .style(.text)
-                        .view
-                }
+            Column {
+                NavigatorBarView<TABS>(nav: nav, title: title, titleTweak: titleTweak, rightActions: rightActions)
 
                 Spacer()
-
-                ForEach(Array(rightActions.enumerated()), id: \.offset) { _, item in
-
-                    Button(action: item.action) {
-                        if let icon = item.icon {
-                            Image(systemName: icon)
-                                .imageScale(.large)
-                        }
-                        if let title = item.title {
-                            Text(title)
-                                .lux
-                                .tweak(.headlineLayout)
-                                .style(.text)
-                                .view
-                        }
-                    }
-                    .lux
-                    .tweak(.canvasSurface)
-                    .style(.layoutBlock, .iconLarge)
-                    .feature(.padding)
-                    .view
-                }
             }
-            .lux
-            .tweak(.canvasSurface)
-            .style(.bar)
-            .view
-            .frame(height: NavigatorUI.NavBarHeight)
-            .frame(maxHeight: .greatestFiniteMagnitude, alignment: .top)
         }
     }
 }

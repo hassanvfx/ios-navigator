@@ -27,7 +27,7 @@ enum DemoTabs: Int, NavigatorTabItem {
     }
 
     var tapOverride: (() -> Void)? {
-            return nil
+        return nil
     }
 
     var displayName: String {

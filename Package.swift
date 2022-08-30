@@ -15,7 +15,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "Lux", url: "https://github.com/spree3d/lux-1", .exact("1.2.7"))
+        .package(name: "Lux", url: "https://github.com/spree3d/lux-1", .exact("1.2.7")),
     ],
     targets: [
         .target(
