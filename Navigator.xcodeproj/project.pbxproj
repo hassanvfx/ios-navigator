@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C6AA27C28BD89AA00C43805 /* NavigatorLib in Frameworks */ = {isa = PBXBuildFile; productRef = 5C6AA27B28BD89AA00C43805 /* NavigatorLib */; };
+		5C4FCCDD28BD918700ECBB79 /* TabBarController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCD228BD918700ECBB79 /* TabBarController+Setup.swift */; };
+		5C4FCCDE28BD918700ECBB79 /* NavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCD328BD918700ECBB79 /* NavigatorView.swift */; };
+		5C4FCCDF28BD918700ECBB79 /* Navigator+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCD428BD918700ECBB79 /* Navigator+Interface.swift */; };
+		5C4FCCE028BD918700ECBB79 /* TabBarController+Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCD528BD918700ECBB79 /* TabBarController+Navigator.swift */; };
+		5C4FCCE128BD918700ECBB79 /* Navigator+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCD628BD918700ECBB79 /* Navigator+Protocol.swift */; };
+		5C4FCCE228BD918700ECBB79 /* TabNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCD728BD918700ECBB79 /* TabNavViewController.swift */; };
+		5C4FCCE328BD918700ECBB79 /* NavigatorTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCD828BD918700ECBB79 /* NavigatorTabBarView.swift */; };
+		5C4FCCE428BD918700ECBB79 /* TabBarController+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCD928BD918700ECBB79 /* TabBarController+Observer.swift */; };
+		5C4FCCE528BD918700ECBB79 /* TabBarController+Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCDA28BD918700ECBB79 /* TabBarController+Sheet.swift */; };
+		5C4FCCE628BD918700ECBB79 /* TabBarController+Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCDB28BD918700ECBB79 /* TabBarController+Representable.swift */; };
+		5C4FCCE728BD918700ECBB79 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FCCDC28BD918700ECBB79 /* Navigator.swift */; };
 		5C75C7AB28BC56B00019AA83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75C7AA28BC56B00019AA83 /* AppDelegate.swift */; };
 		5C75C7AD28BC56B00019AA83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75C7AC28BC56B00019AA83 /* SceneDelegate.swift */; };
 		5C75C7AF28BC56B00019AA83 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75C7AE28BC56B00019AA83 /* RootView.swift */; };
@@ -44,7 +54,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5C6AA27A28BD89A100C43805 /* Navigator */ = {isa = PBXFileReference; lastKnownFileType = text; name = Navigator; sourceTree = SOURCE_ROOT; };
+		5C4FCCD228BD918700ECBB79 /* TabBarController+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabBarController+Setup.swift"; sourceTree = "<group>"; };
+		5C4FCCD328BD918700ECBB79 /* NavigatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorView.swift; sourceTree = "<group>"; };
+		5C4FCCD428BD918700ECBB79 /* Navigator+Interface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Navigator+Interface.swift"; sourceTree = "<group>"; };
+		5C4FCCD528BD918700ECBB79 /* TabBarController+Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabBarController+Navigator.swift"; sourceTree = "<group>"; };
+		5C4FCCD628BD918700ECBB79 /* Navigator+Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Navigator+Protocol.swift"; sourceTree = "<group>"; };
+		5C4FCCD728BD918700ECBB79 /* TabNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavViewController.swift; sourceTree = "<group>"; };
+		5C4FCCD828BD918700ECBB79 /* NavigatorTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorTabBarView.swift; sourceTree = "<group>"; };
+		5C4FCCD928BD918700ECBB79 /* TabBarController+Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabBarController+Observer.swift"; sourceTree = "<group>"; };
+		5C4FCCDA28BD918700ECBB79 /* TabBarController+Sheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabBarController+Sheet.swift"; sourceTree = "<group>"; };
+		5C4FCCDB28BD918700ECBB79 /* TabBarController+Representable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabBarController+Representable.swift"; sourceTree = "<group>"; };
+		5C4FCCDC28BD918700ECBB79 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		5C75C7A728BC56B00019AA83 /* Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C75C7AA28BC56B00019AA83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C75C7AC28BC56B00019AA83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C6AA27C28BD89AA00C43805 /* NavigatorLib in Frameworks */,
 				5C75C83E28BC5AAB0019AA83 /* Lux in Frameworks */,
 				5C75C82328BC58720019AA83 /* Resolver in Frameworks */,
 			);
@@ -95,6 +114,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C4FCCD128BD918700ECBB79 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				5C4FCCD228BD918700ECBB79 /* TabBarController+Setup.swift */,
+				5C4FCCD328BD918700ECBB79 /* NavigatorView.swift */,
+				5C4FCCD428BD918700ECBB79 /* Navigator+Interface.swift */,
+				5C4FCCD528BD918700ECBB79 /* TabBarController+Navigator.swift */,
+				5C4FCCD628BD918700ECBB79 /* Navigator+Protocol.swift */,
+				5C4FCCD728BD918700ECBB79 /* TabNavViewController.swift */,
+				5C4FCCD828BD918700ECBB79 /* NavigatorTabBarView.swift */,
+				5C4FCCD928BD918700ECBB79 /* TabBarController+Observer.swift */,
+				5C4FCCDA28BD918700ECBB79 /* TabBarController+Sheet.swift */,
+				5C4FCCDB28BD918700ECBB79 /* TabBarController+Representable.swift */,
+				5C4FCCDC28BD918700ECBB79 /* Navigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		5C6AA27428BD886C00C43805 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +163,7 @@
 		5C75C7A928BC56B00019AA83 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
-				5C6AA27A28BD89A100C43805 /* Navigator */,
+				5C4FCCD128BD918700ECBB79 /* Navigator */,
 				5C75C86A28BC8FD80019AA83 /* Demo */,
 				5C75C7B028BC56B30019AA83 /* Assets.xcassets */,
 				5C75C7B528BC56B30019AA83 /* LaunchScreen.storyboard */,
@@ -197,7 +234,6 @@
 			packageProductDependencies = (
 				5C75C82228BC58720019AA83 /* Resolver */,
 				5C75C83D28BC5AAB0019AA83 /* Lux */,
-				5C6AA27B28BD89AA00C43805 /* NavigatorLib */,
 			);
 			productName = Navigator;
 			productReference = 5C75C7A728BC56B00019AA83 /* Navigator.app */;
@@ -319,12 +355,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4FCCDF28BD918700ECBB79 /* Navigator+Interface.swift in Sources */,
+				5C4FCCE728BD918700ECBB79 /* Navigator.swift in Sources */,
 				5C75C86C28BC8FEE0019AA83 /* HelperViews.swift in Sources */,
 				5C75C7AB28BC56B00019AA83 /* AppDelegate.swift in Sources */,
 				5C75C7AD28BC56B00019AA83 /* SceneDelegate.swift in Sources */,
+				5C4FCCE028BD918700ECBB79 /* TabBarController+Navigator.swift in Sources */,
+				5C4FCCE328BD918700ECBB79 /* NavigatorTabBarView.swift in Sources */,
+				5C4FCCE628BD918700ECBB79 /* TabBarController+Representable.swift in Sources */,
+				5C4FCCDD28BD918700ECBB79 /* TabBarController+Setup.swift in Sources */,
+				5C4FCCDE28BD918700ECBB79 /* NavigatorView.swift in Sources */,
 				5C75C82828BC59890019AA83 /* Constants.swift in Sources */,
+				5C4FCCE428BD918700ECBB79 /* TabBarController+Observer.swift in Sources */,
+				5C4FCCE528BD918700ECBB79 /* TabBarController+Sheet.swift in Sources */,
+				5C4FCCE228BD918700ECBB79 /* TabNavViewController.swift in Sources */,
 				5C75C7AF28BC56B00019AA83 /* RootView.swift in Sources */,
 				5C75C81D28BC583E0019AA83 /* Resolver+Config.swift in Sources */,
+				5C4FCCE128BD918700ECBB79 /* Navigator+Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,10 +716,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5C6AA27B28BD89AA00C43805 /* NavigatorLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = NavigatorLib;
-		};
 		5C75C82228BC58720019AA83 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5C75C82128BC58720019AA83 /* XCRemoteSwiftPackageReference "Resolver" */;
