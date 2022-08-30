@@ -7,6 +7,8 @@
 
 import Foundation
 import Resolver
+import NavigatorLib
+
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         Resolver.register { Navigator<DemoTabs>() }

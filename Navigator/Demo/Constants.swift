@@ -7,6 +7,7 @@
 import Resolver
 import SwiftUI
 import UIKit
+import NavigatorLib
 
 enum DemoTabs: Int, NavigatorTabItem {
     case home,

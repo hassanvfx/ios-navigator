@@ -8,6 +8,8 @@
 import Lux
 import Resolver
 import SwiftUI
+import NavigatorLib
+
 struct HomeView: View {
     @InjectedObject var nav: Navigator<DemoTabs>
     func pushTestController() {

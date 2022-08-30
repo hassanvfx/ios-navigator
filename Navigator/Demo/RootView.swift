@@ -8,6 +8,7 @@
 import Lux
 import Resolver
 import SwiftUI
+import NavigatorLib
 
 struct RootView: View {
     @InjectedObject var nav: Navigator<DemoTabs>
@@ -17,7 +18,7 @@ struct RootView: View {
             TabNavViewController<DemoTabs>.RepresentableView()
                 .edgesIgnoringSafeArea(.all)
 
-            NavigatorTabBarView()
+            NavigatorTabBarView<DemoTabs>()
         }
         .lux
         .tweak(.canvasSurface)
