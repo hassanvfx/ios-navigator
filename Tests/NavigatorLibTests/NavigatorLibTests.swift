@@ -1,5 +1,5 @@
-import XCTest
 @testable import NavigatorLib
+import XCTest
 
 final class NavigatorLibTests: XCTestCase {
     func testExample() {

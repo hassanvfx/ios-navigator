@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Resolver
 import NavigatorLib
+import Resolver
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {

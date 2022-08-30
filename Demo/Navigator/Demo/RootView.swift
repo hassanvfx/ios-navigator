@@ -6,19 +6,19 @@
 //
 
 import Lux
+import NavigatorLib
 import Resolver
 import SwiftUI
-import NavigatorLib
 
 struct RootView: View {
     @InjectedObject var nav: Navigator<DemoTabs>
 
     var body: some View {
         ZStack {
-            TabNavViewController<DemoTabs>.RepresentableView()
+            TabNavViewController<DemoTabs>.DisplayView(nav: nav)
                 .edgesIgnoringSafeArea(.all)
 
-            NavigatorTabBarView<DemoTabs>()
+            NavigatorTabBarView<DemoTabs>(nav: nav)
         }
         .lux
         .tweak(.canvasSurface)

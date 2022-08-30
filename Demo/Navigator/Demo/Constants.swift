@@ -4,10 +4,10 @@
 //
 //  Created by hassan uriostegui on 8/28/22.
 //
-import Resolver
+
+import NavigatorLib
 import SwiftUI
 import UIKit
-import NavigatorLib
 
 enum DemoTabs: Int, NavigatorTabItem {
     case home,

@@ -6,12 +6,14 @@
 //
 
 import Lux
-import Resolver
 import SwiftUI
 
-public struct NavigatorTabBarView<TABS:NavigatorTabItem>: View {
-    @InjectedObject var nav: Navigator<TABS>
-    public init(){}
+public struct NavigatorTabBarView<TABS: NavigatorTabItem>: View {
+    @ObservedObject var nav: Navigator<TABS>
+    public init(nav: Navigator<TABS>) {
+        self.nav = nav
+    }
+
     public var body: some View {
         Column {
             Spacer()

@@ -16,9 +16,6 @@ enum NavigatorUI {
 }
 
 public class Navigator<TABS: NavigatorTabItem>: ObservableObject, NavigatorProtocol {
-    
-    
-    
     @Published public var tab: TABS?
     @Published public var sheetController: UIViewController?
     @Published public var modalStyle: UIModalPresentationStyle = .pageSheet
@@ -26,15 +23,15 @@ public class Navigator<TABS: NavigatorTabItem>: ObservableObject, NavigatorProto
     @Published public var animateTabBar = true
 
     public weak var tabController: TabNavViewController<TABS>?
-    public init(){}
+    public init() {}
     public var navController: UINavigationController? {
         tabController?.currentNavigator
     }
 }
 
-extension Navigator {
+public extension Navigator {
     /// The following dynamically reflects the currently acitve stack from the active UINavigationController
-    public func syncOnNavigationChange() {
+    func syncOnNavigationChange() {
         DispatchQueue.main.async {
             self.stack = self.navController?.viewControllers ?? []
         }

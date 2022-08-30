@@ -6,14 +6,22 @@
 //
 
 import Combine
-import Resolver
 import SwiftUI
 
 public class TabNavViewController<TABS: NavigatorTabItem>: UITabBarController, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
-    @Injected var nav: Navigator<TABS>
+    var nav: Navigator<TABS>
     weak var sheetNavigator: UINavigationController?
-
     var cancellables: [AnyCancellable] = []
+
+    init(nav: Navigator<TABS>) {
+        self.nav = nav
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override public func viewDidLoad() {
         super.viewDidLoad()

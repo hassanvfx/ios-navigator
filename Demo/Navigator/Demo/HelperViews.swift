@@ -6,16 +6,16 @@
 //
 
 import Lux
+import NavigatorLib
 import Resolver
 import SwiftUI
-import NavigatorLib
 
 struct HomeView: View {
     @InjectedObject var nav: Navigator<DemoTabs>
     func pushTestController() {
-        let view = NavigatorView(nav: nav, title: "Test Controller"){ChildView()}
-        
-        let host = UIHostingController<NavigatorView<ChildView>>(rootView: view)
+        let view = NavigatorView(nav: nav, title: "Test Controller") { ChildView() }
+
+        let host = UIHostingController<NavigatorView<DemoTabs, ChildView>>(rootView: view)
         host.view.layoutMargins = .zero
         nav.push(controller: host)
     }
@@ -34,8 +34,8 @@ struct HomeView: View {
 struct ChildView: View {
     @InjectedObject var nav: Navigator<DemoTabs>
     func pushTestController() {
-        let view = NavigatorView(nav:nav,title: "Test Controller") { ChildView() }
-        let host = UIHostingController<NavigatorView<ChildView>>(rootView: view)
+        let view = NavigatorView(nav: nav, title: "Test Controller") { ChildView() }
+        let host = UIHostingController<NavigatorView<DemoTabs, ChildView>>(rootView: view)
         host.view.layoutMargins = .zero
         nav.push(controller: host)
     }
@@ -54,8 +54,8 @@ struct ChildView: View {
 struct StoreView: View {
     @InjectedObject var nav: Navigator<DemoTabs>
     func presentController() {
-        let view = NavigatorView(nav:nav, title: "Test Controller") { ChildView() }
-        let host = UIHostingController<NavigatorView<ChildView>>(rootView: view)
+        let view = NavigatorView(nav: nav, title: "Test Controller") { ChildView() }
+        let host = UIHostingController<NavigatorView<DemoTabs, ChildView>>(rootView: view)
         host.view.layoutMargins = .zero
         nav.present(sheet: host)
     }

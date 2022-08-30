@@ -7,19 +7,23 @@
 
 import SwiftUI
 
-extension TabNavViewController {
-    public struct RepresentableView: UIViewControllerRepresentable {
-        public init(){}
-        public func makeUIViewController(context _: UIViewControllerRepresentableContext<RepresentableView>) -> TabNavViewController {
-            TabNavViewController()
+public extension TabNavViewController {
+    struct DisplayView<TABS: NavigatorTabItem>: UIViewControllerRepresentable {
+        var nav: Navigator<TABS>
+        public init(nav: Navigator<TABS>) {
+            self.nav = nav
         }
 
-        public static func dismantleUIViewController(controller: TabNavViewController, coordinator _: ()) {
+        public func makeUIViewController(context _: UIViewControllerRepresentableContext<DisplayView>) -> TabNavViewController<TABS> {
+            TabNavViewController<TABS>(nav: nav)
+        }
+
+        public static func dismantleUIViewController(controller: TabNavViewController<TABS>, coordinator _: ()) {
             controller.cancelObservers()
         }
 
-        public func updateUIViewController(_: TabNavViewController,
-                                    context _: UIViewControllerRepresentableContext<RepresentableView>)
+        public func updateUIViewController(_: TabNavViewController<TABS>,
+                                           context _: UIViewControllerRepresentableContext<DisplayView>)
         {}
     }
 }

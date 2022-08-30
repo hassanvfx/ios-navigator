@@ -6,23 +6,26 @@ import PackageDescription
 let package = Package(
     name: "NavigatorLib",
     platforms: [
-            .iOS(.v13)
-        ],
+        .iOS(.v13),
+    ],
     products: [
         .library(
             name: "NavigatorLib",
-            targets: ["NavigatorLib"]),
+            targets: ["NavigatorLib"]
+        ),
     ],
     dependencies: [
-        .package(name:"Lux",url: "https://github.com/spree3d/lux-1",  .exact("1.2.7")),
-        .package(name:"Resolver",url: "https://github.com/hmlongco/Resolver", .exact("1.5.0"))
+        .package(name: "Lux", url: "https://github.com/spree3d/lux-1", .exact("1.2.7")),
+        .package(name: "Resolver", url: "https://github.com/hmlongco/Resolver", .exact("1.5.0")),
     ],
     targets: [
         .target(
             name: "NavigatorLib",
-            dependencies: ["Lux","Resolver"]),
+            dependencies: ["Lux", "Resolver"]
+        ),
         .testTarget(
             name: "NavigatorLibTests",
-            dependencies: ["NavigatorLib"]),
+            dependencies: ["NavigatorLib"]
+        ),
     ]
 )

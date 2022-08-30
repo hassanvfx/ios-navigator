@@ -6,48 +6,48 @@
 //
 
 import Lux
-import Resolver
 import SwiftUI
 
 public struct NavigatorActionItem {
     var icon: String?
     var title: String?
     var action: () -> Void
-    public init( icon: String?,
+    public init(icon: String?,
                 title: String?,
-                action: @escaping () -> Void){
+                action: @escaping () -> Void)
+    {
         self.icon = icon
         self.title = title
         self.action = action
     }
 }
 
-
-public struct NavigatorView<CONTENT: View>: View {
-    var nav:NavigatorProtocol
+public struct NavigatorView<TABS: NavigatorTabItem, CONTENT: View>: View {
     var title: String?
     var titleTweak: Lux.Tweak = .titleLayout
     var rightActions = [NavigatorActionItem]()
-    let content: (() -> CONTENT)
+    let content: () -> CONTENT
 
-    public init(nav:NavigatorProtocol,
-                title:String? = nil,
+    @ObservedObject var nav: Navigator<TABS>
+    public init(nav: Navigator<TABS>,
+                title: String? = nil,
                 titleTweak: Lux.Tweak = .titleLayout,
                 rightActions: [NavigatorActionItem] = [],
-                content: @escaping () -> CONTENT){
-    
+                content: @escaping () -> CONTENT)
+    {
         self.nav = nav
         self.title = title
         self.titleTweak = titleTweak
         self.rightActions = rightActions
         self.content = content
     }
+
     func dismiss() {
         nav.dismissSheet()
     }
 
     func goBack() {
-        nav.popController(animated: true)
+        nav.popController()
     }
 
     public var body: some View {

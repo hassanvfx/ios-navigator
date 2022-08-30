@@ -7,16 +7,14 @@
 
 import SwiftUI
 
-
-public protocol NavigatorProtocol{
+public protocol NavigatorProtocol {
     func dismissSheet()
     func present(sheet content: UIViewController)
-    func popController(animated: Bool )
+    func popController(animated: Bool)
     func push(controller: UIViewController)
     func popToRoot(animated: Bool)
-    var displayBackButton:Bool{ get }
-    var displayCloseButton:Bool{get}
-    
+    var displayBackButton: Bool { get }
+    var displayCloseButton: Bool { get }
 }
 
 public extension Navigator {
@@ -40,7 +38,6 @@ public extension Navigator {
 
 public extension Navigator {
     func push(controller: UIViewController) {
-        
         guard let nav = navController else {
             return
         }
