@@ -13,6 +13,13 @@ public struct NavigatorActionItem {
     var icon: String?
     var title: String?
     var action: () -> Void
+    public init( icon: String?,
+                title: String?,
+                action: @escaping () -> Void){
+        self.icon = icon
+        self.title = title
+        self.action = action
+    }
 }
 
 public struct NavigatorView<CONTENT: View, TABS: NavigatorTabItem>: View {

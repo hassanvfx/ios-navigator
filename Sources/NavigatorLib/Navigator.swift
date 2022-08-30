@@ -24,14 +24,14 @@ public class Navigator<TABS: NavigatorTabItem>: ObservableObject {
 
     public weak var tabController: TabNavViewController<TABS>?
     public init(){}
-    var navController: UINavigationController? {
+    public var navController: UINavigationController? {
         tabController?.currentNavigator
     }
 }
 
 extension Navigator {
     /// The following dynamically reflects the currently acitve stack from the active UINavigationController
-    func syncOnNavigationChange() {
+    public func syncOnNavigationChange() {
         DispatchQueue.main.async {
             self.stack = self.navController?.viewControllers ?? []
         }
