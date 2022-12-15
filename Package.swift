@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "NavigatorLib",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v15),
     ],
     products: [
         .library(
@@ -15,12 +15,14 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "Lux", url: "https://github.com/spree3d/lux-1", .exact("1.2.7")),
+        .package(url: "https://github.com/spree3d/ios-coreui", exact: "1.0.0")
     ],
     targets: [
         .target(
             name: "NavigatorLib",
-            dependencies: ["Lux"]
+            dependencies: [
+                .product(name: "CoreUIKit", package: "ios-coreui")
+            ]
         ),
         .testTarget(
             name: "NavigatorLibTests",

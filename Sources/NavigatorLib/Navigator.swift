@@ -22,8 +22,15 @@ public class Navigator<TABS: NavigatorTabItem>: ObservableObject, NavigatorProto
     @Published public var stack = [UIViewController]()
     @Published public var animateTabBar = true
 
+    internal var coreUIKitObserver:NSObjectProtocol?
     public weak var tabController: TabNavViewController<TABS>?
-    public init() {}
+   
+    public init() {
+        observeCoreUIKitNavigationEvents()
+    }
+    deinit {
+        stopObservingCoreUIKitNavigationEvents()
+    }
     public var navController: UINavigationController? {
         tabController?.currentNavigator
     }
