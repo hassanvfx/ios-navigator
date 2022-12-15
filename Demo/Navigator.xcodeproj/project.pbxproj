@@ -669,7 +669,7 @@
 			repositoryURL = "https://github.com/spree3d/ios-coreui";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.0;
+				version = 1.0.1;
 			};
 		};
 		5C75C82128BC58720019AA83 /* XCRemoteSwiftPackageReference "Resolver" */ = {
