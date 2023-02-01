@@ -15,7 +15,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/spree3d/ios-coreui", exact: "3.2.5")
+        .package(url: "https://github.com/hassanvfx/ios-coreui", exact: "3.2.8")
     ],
     targets: [
         .target(

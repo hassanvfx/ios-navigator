@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C1BF390294BA42D00A09F9B /* Lux in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1BF38F294BA42D00A09F9B /* Lux */; };
-		5C1BF393294BA47A00A09F9B /* CoreUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1BF392294BA47A00A09F9B /* CoreUIKit */; };
 		5C4FCCFD28BD98BF00ECBB79 /* NavigatorLib in Frameworks */ = {isa = PBXBuildFile; productRef = 5C4FCCFC28BD98BF00ECBB79 /* NavigatorLib */; };
 		5C75C7AB28BC56B00019AA83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75C7AA28BC56B00019AA83 /* AppDelegate.swift */; };
 		5C75C7AD28BC56B00019AA83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75C7AC28BC56B00019AA83 /* SceneDelegate.swift */; };
@@ -73,8 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C1BF393294BA47A00A09F9B /* CoreUIKit in Frameworks */,
-				5C1BF390294BA42D00A09F9B /* Lux in Frameworks */,
 				5C4FCCFD28BD98BF00ECBB79 /* NavigatorLib in Frameworks */,
 				5C75C82328BC58720019AA83 /* Resolver in Frameworks */,
 			);
@@ -199,8 +195,6 @@
 			packageProductDependencies = (
 				5C75C82228BC58720019AA83 /* Resolver */,
 				5C4FCCFC28BD98BF00ECBB79 /* NavigatorLib */,
-				5C1BF38F294BA42D00A09F9B /* Lux */,
-				5C1BF392294BA47A00A09F9B /* CoreUIKit */,
 			);
 			productName = Navigator;
 			productReference = 5C75C7A728BC56B00019AA83 /* Navigator.app */;
@@ -275,8 +269,6 @@
 			mainGroup = 5C75C79E28BC56B00019AA83;
 			packageReferences = (
 				5C75C82128BC58720019AA83 /* XCRemoteSwiftPackageReference "Resolver" */,
-				5C1BF38E294BA42D00A09F9B /* XCRemoteSwiftPackageReference "ios-vendor-lux" */,
-				5C1BF391294BA47A00A09F9B /* XCRemoteSwiftPackageReference "ios-coreui" */,
 			);
 			productRefGroup = 5C75C7A828BC56B00019AA83 /* Products */;
 			projectDirPath = "";
@@ -499,7 +491,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Navigator/Preview Content\"";
-				DEVELOPMENT_TEAM = 7Y6Q2F6589;
+				DEVELOPMENT_TEAM = T2U36XTM2B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Navigator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -520,7 +512,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Navigator/Preview Content\"";
-				DEVELOPMENT_TEAM = 7Y6Q2F6589;
+				DEVELOPMENT_TEAM = T2U36XTM2B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Navigator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -656,22 +648,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5C1BF38E294BA42D00A09F9B /* XCRemoteSwiftPackageReference "ios-vendor-lux" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/spree3d/ios-vendor-lux";
-			requirement = {
-				kind = exactVersion;
-				version = 1.2.7;
-			};
-		};
-		5C1BF391294BA47A00A09F9B /* XCRemoteSwiftPackageReference "ios-coreui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/spree3d/ios-coreui";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.1;
-			};
-		};
 		5C75C82128BC58720019AA83 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
@@ -683,16 +659,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5C1BF38F294BA42D00A09F9B /* Lux */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5C1BF38E294BA42D00A09F9B /* XCRemoteSwiftPackageReference "ios-vendor-lux" */;
-			productName = Lux;
-		};
-		5C1BF392294BA47A00A09F9B /* CoreUIKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5C1BF391294BA47A00A09F9B /* XCRemoteSwiftPackageReference "ios-coreui" */;
-			productName = CoreUIKit;
-		};
 		5C4FCCFC28BD98BF00ECBB79 /* NavigatorLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NavigatorLib;

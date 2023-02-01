@@ -1,6 +1,6 @@
 //
 //  TabBarController+Navigator.swift
-//  spree3d
+
 //
 //  Created by hassan uriostegui on 2/7/21.
 //
