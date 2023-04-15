@@ -97,7 +97,10 @@ public extension Navigator {
         }
 
         guard tabController?.selectedIndex != tabItem.intValue else { return }
-        tabController?.selectedIndex = tab
+        DispatchQueue.main.async {
+            self.tabController?.selectedIndex = tab
+        }
+       
     }
 }
 
